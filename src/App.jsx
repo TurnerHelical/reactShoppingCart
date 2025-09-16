@@ -1,14 +1,14 @@
-import { useState } from 'react'
 import './App.css'
 import Header from './components/header'
-import Home from './components/home'
+import { Outlet } from 'react-router'
 
 function App() {
-
   return (
     <>
       <Header />
-      <Home />
+      <div>
+        <Outlet />
+      </div>
     </>
   )
 }
