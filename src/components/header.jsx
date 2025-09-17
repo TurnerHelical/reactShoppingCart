@@ -13,9 +13,9 @@ const Header = () => {
             </div>
             <nav>
                 <ul>
-                    <li><Link to={'/'}>Link 1</Link></li>
-                    <li><Link to={'shop'}>Link 2</Link></li>
-                    <li><Link to={'cart'}>Link 3</Link></li>
+                    <li className='navRight'><Link to={'/'} className='navLink'>Link 1</Link></li>
+                    <li className='navCenter'><Link to={'shop'} className='navLink'>Link 2</Link></li>
+                    <li className='navLeft'><Link to={'cart'} className='navLink'>Link 3</Link></li>
                 </ul>
             </nav>
         </header>
