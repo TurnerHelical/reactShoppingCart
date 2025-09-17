@@ -1,12 +1,14 @@
-import { useState } from 'react'
+
 import { Link } from 'react-router';
+import '../styles/header.css'
+
 
 const Header = () => {
     // const [page, setPage] = useState('home');
     return (
         <header>
-            <div>
-                <img src="#"/>
+            <div id='titleDiv'>
+                <img id='titleImg' src='src/assets/groceryLogoWithNoName.png'/>
                 <h1>Odin's Storefront</h1>
             </div>
             <nav>
