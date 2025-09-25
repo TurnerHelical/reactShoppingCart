@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&display=swap');
+
+#content {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr;
+    justify-content: center;
+}
+
+#welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    justify-self: center;
+    padding-top: 30px;
+}
+
+#welcome img {
+    height: 500px;
+}
+
+#welcome p {
+    margin-top: -70px ;
+    max-width: 600px;
+    text-align: center;
+    border: 1px black solid;
+    border-radius: 20px;
+    font-size: 24px;
+    transform: translate(-200px);
+    background-color: white;
+    box-shadow: 0px 0px 5px black;
+    padding: 20px 20px;
+    font-family: 'Asimovian', sans-serif;
+}
+
+#reviewCtr {
+    margin-top: 100px;
+    display: grid;
+    grid-template: 80px 1fr / 1fr;
+    align-items: center;
+    height: fit-content;
+}
+
+#reviewTitle {
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Asimovian', sans-serif;
+}
+
+#reviewCardCtr {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.reviewCard {
+    width: 500px;
+    justify-self: center;
+    border: black solid 2px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.reviewCard h4 {
+    text-align: end;
+}
+
+.reviewCard p {
+    font-size: 20px;
+    font-style: italic;
+}
