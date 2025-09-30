@@ -15,11 +15,16 @@
     width: 200px;
 }
 
+.navLink.active {
+    background-color: blue;
+}
+
 nav {
     display: flex;
     justify-content: center;
     background-color: rgb(230, 179, 87);
     padding: 5px 0px;
+    gap: 100px;
 }
 
 nav ul {
@@ -43,6 +48,13 @@ nav li {
     background-color: rgb(48, 22, 22);
     padding: 10px 30px;
     border-radius: 40px;
+    font-size: 24px;
+    width: 125px;
+    text-align: center;
+}
+
+.navLink:hover {
+    background-color: blue;
 }
 
 .navLeft {

@@ -1,10 +1,10 @@
 
-import { Link } from 'react-router';
-import '../styles/header.css'
+import { NavLink } from 'react-router';
+import '../styles/header.css';
 
 
 const Header = () => {
-    // const [page, setPage] = useState('home');
+
     return (
         <header>
             <div id='titleDiv'>
@@ -12,11 +12,10 @@ const Header = () => {
                 <h1>Odin's Storefront</h1>
             </div>
             <nav>
-                <ul>
-                    <li className='navRight'><Link to={'/'} className='navLink'>Link 1</Link></li>
-                    <li className='navCenter'><Link to={'shop'} className='navLink'>Link 2</Link></li>
-                    <li className='navLeft'><Link to={'cart'} className='navLink'>Link 3</Link></li>
-                </ul>
+                <NavLink to='/' className={({isActive}) => `navLink ${isActive ? 'active' : ''}`} end>Home</NavLink>
+                <NavLink to='/shop' className={({isActive}) => `navLink ${isActive ? 'active' : ''}`} end>Shop</NavLink>
+                <NavLink to='/cart' className={({isActive}) => `navLink ${isActive ? 'active' : ''}`} end>Cart</NavLink>
+
             </nav>
         </header>
     )
