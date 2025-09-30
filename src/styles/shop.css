@@ -3,14 +3,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 75px;
+  padding: 75px 0px;
   gap: 50px;
+
 }
 
 #productCardCtr {
   display: grid;
   grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
   font-family: "Asimovian", sans-serif;
+  gap: 40px;
 }
 
 .productCard {
@@ -21,6 +23,7 @@
   background-color: bisque;
   text-align: center;
   max-width: 400px;
+  border-radius: 10px;
 }
 
 .productImg {
@@ -76,4 +79,15 @@
 
 .productQuant {
   padding: 5px;
+}
+
+.btnCtr {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cardBtn {
+    padding: 5px 10px;
+    min-width: 35px;
 }
