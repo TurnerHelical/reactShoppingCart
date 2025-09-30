@@ -1,0 +1,39 @@
+#shopContentCtr {
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 75px;
+    gap: 50px;
+}
+
+#productCardCtr {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    font-family: 'Asimovian', sans-serif;
+}
+
+.productCard {
+    padding: 20px;
+    background-color: bisque;
+    text-align: center;
+}
+
+.productImg {
+    width: 250px;
+    height: 250px;
+}
+
+.productName {
+    padding: 10px;
+}
+
+.productPrice {
+    padding: 5px;
+}
+
+.productQuant {
+    padding: 5px;
+}
+
+
