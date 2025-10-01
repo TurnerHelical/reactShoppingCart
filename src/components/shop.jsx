@@ -1,44 +1,9 @@
 import '../styles/shop.css'
-import { useEffect, useState } from 'react';
+import { useOutletContext } from 'react-router'
 
 
 const Shop = () => {
-    const [itemArray, setItemArray] = useState([])
-
-    const getData = async() => {
-        const res = await fetch(`https://fakestoreapi.com/products`);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.json();
-    }
-
-    useEffect(() => {
-        const load = async () => {
-            try {
-              const items = await getData();
-              const prodArray = items.slice(0, 9).map(({ title, image, price }) => ({
-                name: title,
-                image,
-                price,
-                quantity: 0,
-              }));
-              setItemArray(prodArray);
-            } catch (err) {
-              console.error("error", err);
-            }
-          };
-      
-          load();
-        }, []);
-
-    const quantityClick = (idx, math) => {
-        setItemArray(prev =>
-            prev.map((item, i) =>
-              i === idx
-                ? { ...item, quantity: Math.max(0, item.quantity + math) }
-                : item
-            )
-          );
-        };       
+    const {itemArray, quantityClick} = useOutletContext();
     
 
     return (
