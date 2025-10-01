@@ -1,15 +1,54 @@
 #shopContentCtr {
   background-color: blue;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template: 100px 1fr / .5fr 3fr .5fr;
   padding: 75px 0px;
   gap: 50px;
+}
 
+#shopTitle {
+    grid-area: 1 / 1 / 2 / 4;
+    text-align: center;
+}
+
+#cartCtr {
+    grid-area: 2 / 3 / 3 / 4;
+    justify-self: center;
+    transform: translateY(-100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#cartIcon {
+    position: sticky;
+    top: 150px;
+    background-color: white;
+    padding: 20px;
+    width: 100px;
+    border-radius: 20px;
+}
+
+#cartAside {
+    margin-top:5px ;
+    position: sticky;
+    top: 255px;
+    background-color: white;
+    width: 90%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#cartAside.open {
+    opacity: 1;
 }
 
 #productCardCtr {
+    grid-area: 2 / 2 / 3 / 3;
   display: grid;
+  justify-self: center;
   grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
   font-family: "Asimovian", sans-serif;
   gap: 40px;

@@ -1,14 +1,17 @@
 import '../styles/shop.css'
 import { useOutletContext } from 'react-router'
+import { useState } from 'react';
 
 
-const Shop = () => {
-    const {itemArray, quantityClick} = useOutletContext();
-    
+function Shop() {
+    const {itemArray, quantityClick, inCart, cartSubtotal} = useOutletContext();
+    const [cartOpen, setCartOpen] = useState(false);
+
 
     return (
         <>
             <div id='shopContentCtr'>
+               
                 
                 <h2 id='shopTitle'>Check out our stuff!</h2>
                 <div id="productCardCtr" >
@@ -28,9 +31,35 @@ const Shop = () => {
                     </div>
                     ))}
                 </div>
+                <div id='cartCtr'>
+                    <img id='cartIcon' src='https://www.freeiconspng.com/uploads/basket-cart-icon-27.png' onClick={() => setCartOpen(!cartOpen)}/>
+                    <div id='cartAside' className={`${cartOpen ? 'open' : ''}`}>
+                        <h3>Cart</h3>
+                        <div id='cartContents'>
+                            {inCart.map((i) => {
+
+                                    return (
+                                        <div>
+                                            {i.name}
+                                            <br></br>
+                                            {i.quantity}
+                                            <br></br>
+                                            ${(i.quantity * i.price).toFixed(2)}
+                                        </div>
+                                    )
+                                })
+                            }
+                            
+                            ${cartSubtotal}
+                            
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     )
 }
 
 export default Shop
+
