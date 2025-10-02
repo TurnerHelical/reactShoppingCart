@@ -18,7 +18,8 @@ function App() {
     (async () => {
       try {
         const items = await getData();
-        const prodArray = items.slice(0, 9).map(({ title, image, price }) => ({
+        const prodArray = items.slice(0, 9).map(({ id, title, image, price }) => ({
+          id,
           name: title,
           image,
           price,    
@@ -41,10 +42,10 @@ function App() {
     [itemArray]
   );
 
-  const quantityClick = (idx, delta) => {
+  const quantityClick = (id, delta) => {
     setItemArray((prev) =>
-      prev.map((item, i) => {
-        if (i !== idx) return item;
+      prev.map(item => {
+        if (item.id !== id) return item;
         const newQty = Math.max(0, item.quantity + Number(delta));
         return { ...item, quantity: newQty };
       })

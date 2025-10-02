@@ -11,7 +11,7 @@ function Shop() {
       <div id="shopContentCtr">
         <h2 id="shopTitle">Check out our stuff!</h2>
         <div id="productCardCtr">
-          {itemArray.map((i, index) => (
+          {itemArray.map((i) => (
             <div className="productCard" key={i.name}>
               <img className="productImg" src={i.image} alt={i.name} />
               <div className="productInfo">
@@ -23,13 +23,13 @@ function Shop() {
                 <div className="btnCtr">
                   <button
                     className="cardBtn"
-                    onClick={() => quantityClick(index, +1)}
+                    onClick={() => quantityClick(i.id, +1)}
                   >
                     +
                   </button>
                   <button
                     className="cardBtn"
-                    onClick={() => quantityClick(index, -1)}
+                    onClick={() => quantityClick(i.id, -1)}
                   >
                     -
                   </button>
