@@ -2,8 +2,10 @@ import { useOutletContext } from "react-router";
 import "../styles/cart.css";
 
 const Cart = () => {
-  const { quantityClick, inCart, cartSubtotal } = useOutletContext();
+  const {clearCartHandle, quantityClick, inCart, cartSubtotal } = useOutletContext();
 
+
+  
   return (
     <div id="checkoutPageCtr">
       <h2>Cart</h2>
@@ -52,7 +54,7 @@ const Cart = () => {
               )}
       </div>
       <div id="checkoutFooter">
-        <button id="clearCart">Clear Cart</button>
+        <button id="clearCart" onClick={() => clearCartHandle()}>Clear Cart</button>
         <p id="cartTotal">Final Price: ${(cartSubtotal).toFixed(2)}</p>
 
       </div>

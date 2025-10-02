@@ -37,6 +37,15 @@ function App() {
     [itemArray]
   );
 
+  const clearCartHandle = () => {
+    setItemArray(prev => 
+    prev.map(item => 
+      item.quantity > 0 ? {...item, quantity:0} : item
+    )
+  );
+}
+      
+
   const cartSubtotal = useMemo(
     () => itemArray.reduce((sum, it) => sum + Number(it.price) * it.quantity, 0),
     [itemArray]
@@ -58,6 +67,7 @@ function App() {
         <Outlet
         context={{
           itemArray,
+          clearCartHandle,
           inCart,
           quantityClick,
           cartSubtotal,
