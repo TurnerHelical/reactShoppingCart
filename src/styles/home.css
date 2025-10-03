@@ -4,69 +4,92 @@
     display: grid;
     grid-template: 1fr 1fr / 1fr;
     justify-content: center;
-}
-
-#welcome {
+  }
+  
+  /* Welcome section */
+  #welcome {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%;
+    width: 90%;                 /* was 70%, now flexible */
+    max-width: 1000px;          /* don’t exceed large layouts */
     justify-self: center;
     padding-top: 30px;
-}
-
-#welcome img {
-    height: 500px;
-}
-
-#welcome p {
-    margin-top: -70px ;
-    max-width: 600px;
+  }
+  
+  #welcome img {
+    max-width: 100%;            /* scale image fluidly */
+    height: auto;               /* maintain aspect ratio */
+  }
+  
+  #welcome p {
+    margin-top: 20px;           /* avoid negative margin */
+    max-width: 100%;            /* fit small screens */
     text-align: center;
     border: 1px black solid;
     border-radius: 20px;
-    font-size: 24px;
-    transform: translate(-200px);
+    font-size: 18px;            /* smaller base font */
     background-color: white;
     box-shadow: 0px 0px 5px black;
-    padding: 20px 20px;
+    padding: 16px;
     font-family: 'Asimovian', sans-serif;
-}
-
-#reviewCtr {
-    margin-top: 100px;
+  }
+  
+  /* Reviews section */
+  #reviewCtr {
+    margin-top: 60px;
     display: grid;
-    grid-template: 80px 1fr / 1fr;
+    grid-template: auto 1fr / 1fr;
     align-items: center;
     height: fit-content;
-}
-
-#reviewTitle {
+  }
+  
+  #reviewTitle {
     text-align: center;
-    font-size: 30px;
+    font-size: 24px;
     font-style: italic;
     font-family: 'Asimovian', sans-serif;
-}
-
-#reviewCardCtr {
+  }
+  
+  #reviewCardCtr {
     display: grid;
-    grid-template: 1fr / 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
     text-align: center;
-}
-
-.reviewCard {
-    width: 500px;
+    margin-top: 20px;
+  }
+  
+  .reviewCard {
+    width: 100%;                /* full width of its grid cell */
+    max-width: 500px;           /* cap on large screens */
     justify-self: center;
     border: black solid 2px;
     border-radius: 20px;
     padding: 10px;
-}
-
-.reviewCard h4 {
+    box-sizing: border-box;
+  }
+  
+  .reviewCard h4 {
     text-align: end;
-}
-
-.reviewCard p {
-    font-size: 20px;
+  }
+  
+  .reviewCard p {
+    font-size: 16px;            /* scale font down for mobile */
     font-style: italic;
-}
+  }
+  
+  /* --- Responsive tweaks --- */
+  @media (max-width: 480px) {
+    #welcome p {
+      font-size: 16px;
+      padding: 12px;
+    }
+  
+    #reviewTitle {
+      font-size: 20px;
+    }
+  
+    .reviewCard p {
+      font-size: 14px;
+    }
+  }
