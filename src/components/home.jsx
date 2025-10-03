@@ -1,12 +1,12 @@
 import "../styles/home.css";
-
+import storeImg from '../assets/groceryStorefront.png'
 const Home = () => {
   return (
     <>
       <div id="content">
         <div id="welcome">
           <img
-            src="src/assets/groceryStorefront.png"
+            src={storeImg}
             id="homeImage"
           />
           <p>

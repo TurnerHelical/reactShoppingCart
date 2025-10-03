@@ -1,4 +1,4 @@
-
+import logoNoName from '../assets/groceryLogoWithNoName.png'
 import { NavLink } from 'react-router';
 import '../styles/header.css';
 
@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <header>
             <div id='titleDiv'>
-                <img id='titleImg' src='src/assets/groceryLogoWithNoName.png'/>
+                <img id='titleImg' src={logoNoName}/>
                 <h1>Odin's Storefront</h1>
             </div>
             <nav>
