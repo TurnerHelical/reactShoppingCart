@@ -39,12 +39,18 @@ function Shop() {
           ))}
         </div>
         <div id="cartCtr">
-          <img
-            id="cartIcon"
-            src="https://www.freeiconspng.com/uploads/basket-cart-icon-27.png"
-            onClick={() => setCartOpen(!cartOpen)}
+          <div id="cartIcon" onClick={() => setCartOpen(!cartOpen)}>
+            <img
+              src="https://www.freeiconspng.com/uploads/basket-cart-icon-27.png"
+              alt="Cart"
+            />
+          </div>
+          <div
+            id="cartOverlay"
+            className={cartOpen ? "open" : ""}
+            onClick={() => setCartOpen(false)}
           />
-          <div id="cartAside" className={`${cartOpen ? "open" : ""}`}>
+          <aside id="cartAside" className={`${cartOpen ? "open" : ""}`}>
             <h3>Cart</h3>
             <div id="cartContents">
               {inCart.length === 0 ? (
@@ -63,12 +69,14 @@ function Shop() {
 
                   <div className="cartFooter">
                     <div className="cartSubtotalLabel">Subtotal</div>
-                    <div className="cartSubtotalValue">${(cartSubtotal).toFixed(2)}</div>
+                    <div className="cartSubtotalValue">
+                      ${cartSubtotal.toFixed(2)}
+                    </div>
                   </div>
                 </>
               )}
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </>
