@@ -24,7 +24,7 @@ const Cart = () => {
                 <h4>{i.name}</h4>
               </div>
               <div className="itemQuantityCtr">
-                <p>{i.quantity}</p>
+                <p>x{i.quantity}</p>
                 <div>
                   <button
                     className="cardBtn"
@@ -39,9 +39,6 @@ const Cart = () => {
                     -
                   </button>
                 </div>
-              </div>
-              <div className="itemPriceCtr">
-                <p>${(i.price).toFixed(2)}</p>
               </div>
               <div className="totalPriceCtr">
                 <p>${(i.price * i.quantity).toFixed(2)}</p>
