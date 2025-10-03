@@ -68,3 +68,37 @@ nav li {
 .navCenter {
     grid-area: 1 / 2 / 2 / 3;
 }
+
+@media (width <= 950px) {
+    #titleDiv {
+        font-size: 24px;
+    }
+}
+
+@media (width <= 700px) {
+    #titleDiv {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+}
+
+@media (width <= 420px) {
+    #titleDiv {
+        font-size: 20px;
+    }
+
+    nav {
+        gap: 5px;
+        
+    }
+
+    .navLink {
+        width: 100px;
+        padding: 0px;
+    }
+}

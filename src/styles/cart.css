@@ -75,3 +75,15 @@
 #clearCart:hover {
     background-color: #3E6B3A;
 }
+
+@media (width <= 1200px) {
+    #checkoutPageItemCtr {
+        width: 70%;
+    }
+}
+
+@media (width <= 920px) {
+    #checkoutPageItemCtr {
+        width: 90%;
+    }
+}
